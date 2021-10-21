@@ -3,6 +3,18 @@
   <title>Prueba de PHP</title>
  </head>
  <body>
- <?php echo '<p>Hola Mundo</p>'; ?>
+ <?php
+if (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE) {
+?>
+<h3>strpos() debe haber devuelto no falso</h3>
+<p>Está usando Internet Explorer</p>
+<?php
+} else {
+?>
+<h3>strpos() debe haber devuelto falso</h3>
+<p>No está usando Internet Explorer</p>
+<?php
+}
+?>
  </body>
 </html>
